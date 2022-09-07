@@ -18,7 +18,8 @@ class MailService {
     };
 
     this._transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
+      service: "gmail",
+      port: 465,
       auth: {
         user: ADMIN_EMAIL,
         pass: PASSWORD,
