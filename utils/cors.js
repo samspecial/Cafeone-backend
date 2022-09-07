@@ -1,5 +1,5 @@
 const cors = require("cors");
-const whitelist = ["http://localhost:1234", "http://localhost:4000"];
+const whitelist = ["http://localhost:1234", "http://localhost:3000"];
 
 const corsOptions = {
   optionsSuccessStatus: 200,
