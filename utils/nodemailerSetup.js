@@ -18,10 +18,13 @@ class MailService {
     };
 
     this._transporter = nodemailer.createTransport({
-      service: SMTP_HOST,
+      host: SMTP_HOST,
       auth: {
         user: ADMIN_EMAIL,
         pass: PASSWORD,
+      },
+      tls: {
+        ciphers: "SSLv3",
       },
     });
     this._transporter.verify(function (error, success) {
