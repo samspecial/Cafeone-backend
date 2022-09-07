@@ -57,6 +57,7 @@ exports.bookSeat = async (req, res, next) => {
         email,
         duration,
         phone,
+        fullName,
         plan_name,
         location_name,
         payment_method,

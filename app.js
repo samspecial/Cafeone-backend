@@ -1,9 +1,11 @@
 const express = require("express");
 const app = express();
+const helmet = require("helmet");
+app.use(helmet());
 
 require("dotenv").config();
 
-const cors = require("cors");
+const corsMiddleware = require("./utils/cors");
 const booking = require("./routes/booking");
 
 // //Sets our app to use the handlebars engine
@@ -19,7 +21,11 @@ const booking = require("./routes/booking");
 // transporter.use("compile", hbs(handlebarOptions));
 
 app.use(express.json());
-app.use(cors());
+//Cors
+app.use(corsMiddleware);
+app.options("*", corsMiddleware);
+
+app.use(helmet());
 
 app.use(express.static("views"));
 app.use("/booking", booking);
