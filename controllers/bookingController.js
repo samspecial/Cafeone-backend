@@ -8,21 +8,25 @@ const { sendEmail } = require("../utils/emailSender");
 
 const { ADMIN_EMAIL, ADMIN_USER } = process.env;
 
-// Open template file
-// var enquiry = fs.readFileSync(
-//   path.join(__dirname, "../views/enquiry.hbs"),
-//   "utf8"
-// );
-// var notification = fs.readFileSync(
-//   path.join(__dirname, "../views/notification.hbs"),
-//   "utf8"
-// );
-
 // Create email generator
 
 exports.bookSeat = async (req, res, next) => {
   try {
-    const { firstname, lastname, email, message, subject } = req.body;
+    const {
+      fullName,
+      email,
+      duration,
+      phone,
+      plan_name,
+      location_name,
+      payment_method,
+      num_of_seat,
+      start_date,
+      amount,
+      totalAmount,
+      endDate,
+    } = req.body;
+
     const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
@@ -46,19 +50,29 @@ exports.bookSeat = async (req, res, next) => {
     };
 
     const notificationMailOptions = {
-      from: email,
-      to: ADMIN_EMAIL,
-      subject,
+      from: "s.osinloye@sdsd.com",
+      to: email,
+      subject: "Seat Reservation",
       template: "notification", // the name of the template file i.e email.handlebars
       context: {
-        name: `${firstname}${lastname}`, // replace {{name}} with Adebola
+        name: `${fullName}`, // replace {{name}} with Adebola
         subject: subject,
         email,
+        duration,
+        phone,
+        plan_name,
+        location_name,
+        payment_method,
+        num_of_seat,
+        start_date,
+        amount,
+        totalAmount,
+        endDate,
         admin: ADMIN_USER,
         year: year,
       },
     };
-    mailService.sendMail(contactMailOptions);
+    // mailService.sendMail(contactMailOptions);
     mailService.sendMail(notificationMailOptions);
     // // console.log(contactMailOptions);
     // //Contact Email
@@ -81,7 +95,7 @@ exports.bookSeat = async (req, res, next) => {
     // sendEmail(notificationEmail);
 
     res.status(201).json({
-      message: `Thank you for contacting me ${firstname}, an email has been sent to ${email}.`,
+      message: `Seat reservation successful ${fullName}, an email has been sent to ${email}.`,
     });
   } catch (error) {
     return res.status(500).json({

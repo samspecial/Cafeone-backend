@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="x-apple-disable-message-reformatting" />
-    <title>Come Join Us</title>
+    <title>CafeOne</title>
     <!--[if mso]>
 	<noscript>
 		<xml>
@@ -56,11 +56,24 @@
                       <h1
                         style="font-size:24px;margin:0 0 20px 0;font-family:Arial,sans-serif;"
                       >Creating Email Magic</h1>
-                      <h2>Hello {{admin}}! </h2>
-                      <p>Please be informed that
+                      <h2>Hello {{name}}! </h2>
+                      <p>Please be informed that your seat reservation was
+                        successful. Kindly find the details below for onward
+                        processing. Customer name:
                         {{firstname}}
-                        with phone number:
+                        Phone number:
+                        {{phone}}
+                        Email Address:
                         {{email}}
+                        Plan name:
+                        {{plna_name}}
+                        Location name:
+                        {{location_name}}
+                        Payment method:
+                        {{payment_method}}
+                        Duration:
+                        {{duration}}
+
                         has contacted you for the opportunity to
                         {{subject}}
                       </p>
@@ -150,7 +163,7 @@
                       <p
                         style="margin:0;font-size:14px;line-height:16px;font-family:Arial,sans-serif;color:#ffffff;"
                       >
-                        &reg; Someone, Somewhere
+                        &reg; Lekki, Lagos
                         {{year}}<br /><a
                           href="http://www.example.com"
                           style="color:#ffffff;text-decoration:underline;"

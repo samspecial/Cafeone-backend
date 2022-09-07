@@ -3,14 +3,6 @@ const hbs = require("nodemailer-express-handlebars");
 const path = require("path");
 
 const { SMTP_HOST, ADMIN_EMAIL, PASSWORD } = process.env;
-// initialize nodemailer
-// const transporter = nodemailer.createTransport({
-//   service: "gmail",
-//   auth: {
-//     user: ADMIN_EMAIL,
-//     pass: PASSWORD,
-//   },
-// });
 
 class MailService {
   constructor(service, user, password) {
@@ -55,9 +47,3 @@ class MailService {
 }
 
 module.exports = MailService;
-
-// point to the template folder
-
-// use a template file with nodemailer
-
-// module.exports = transporter;
