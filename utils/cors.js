@@ -5,6 +5,5 @@ const corsOptions = {
   optionsSuccessStatus: 200,
   origin: whitelist,
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
 };
 module.exports = cors(corsOptions);
