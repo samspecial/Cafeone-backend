@@ -7,16 +7,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="x-apple-disable-message-reformatting" />
-    <title>CafeOne</title>
-    <!--[if mso]>
-	<noscript>
-		<xml>
-			<o:OfficeDocumentSettings>
-				<o:PixelsPerInch>96</o:PixelsPerInch>
-			</o:OfficeDocumentSettings>
-		</xml>
-	</noscript>
-	<![endif]-->
+    <title>CafeOne - Space Booking</title>
+
     <style>
       table, td, div, h1, p {font-family: Arial, sans-serif;}
     </style>
@@ -32,7 +24,6 @@
             role="presentation"
             style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;"
           >
-
             <tr>
               <td align="center">
                 <img
@@ -43,7 +34,6 @@
                 />
               </td>
             </tr>
-
             <tr>
               <td style="padding:36px 30px 42px 30px;">
                 <table
@@ -53,44 +43,42 @@
                   <tr>
                     <td style="padding:0 0 36px 0;color:#153643;">
 
-                      <h2>Hello {{name}} </h2>
-                      <p>Please be informed that your seat reservation was
-                        successful. Kindly find the details below for onward
-                        processing.
+                      <h2>Hello Admin, </h2>
+                      <p>Please be informed that
+                        {{name}}
+                        has made a space reservation . Kindly find the details
+                        below for onward processing.
+                        <br />
                         <br />
                         Customer name:
                         {{name}}
-                        <br />
+                        <hr />
                         Phone number:
                         {{phone}}
-                        <br />
+                        <hr />
                         Email Address:
                         {{email}}
-                        <br />
+                        <hr />
                         Plan name:
-                        {{plan_name}}
-                        <br />
-                        Location name:
-                        {{location_name}}
-                        <br />
-                        Payment method:
-                        {{payment_method}}
-                        <br />
+                        {{plan}}
+                        <hr />
+                        Start time:
+                        {{startTime}}
+                        <hr />
+                        Location:
+                        {{locationName}}
+                        <hr />
                         Duration:
                         {{duration}}
-                        <br />
-                        Number of seat:
-                        {{num_of_seat}}
-                        <br />
+                        hours
+                        <hr />
+
                         Amount:
-                        {{amount}}
-                        <br />
-                        Start date:
-                        {{start_date}}
-                        <br />
-                        End date:
-                        {{endDate}}
-                        <br />
+                        {{totalAmount}}
+                        <hr />
+                        Payment method:
+                        {{paymentMethod}}
+                        <hr />
 
                       </p>
 

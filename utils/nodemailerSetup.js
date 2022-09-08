@@ -38,10 +38,11 @@ class MailService {
 
     this._transporter.use("compile", hbs(options));
   }
-  sendMail({ to, sender, from, subject, template, context, attachments }) {
+  sendMail({ to, sender, bcc, from, subject, template, context, attachments }) {
     return this._transporter.sendMail({
       to,
       sender,
+      bcc,
       from,
       subject,
       template,

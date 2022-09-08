@@ -46,12 +46,53 @@ exports.bookSeat = async (req, res) => {
     //   },
     // };
 
+    const bookSeatAdmin = {
+      from: "CafeOne <s.osinloye@sdsd.com>",
+      sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
+      to: `Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
+      bcc: "psalmueloye@gmail.com",
+      subject: "Seat Reservation",
+      template: "seat-admin",
+      attachments: [
+        {
+          filename: "Cafeone.png",
+          path: path.join(__dirname, "../views/Cafeone.png"),
+          cid: "Cafeone",
+        },
+      ],
+      context: {
+        name: `${fullName}`, // replace {{name}} with Adebola
+        subject: "Seat Reservation",
+        email,
+        duration,
+        phone,
+        fullName,
+        plan_name,
+        location_name,
+        payment_method,
+        num_of_seat,
+        start_date,
+        amount,
+        totalAmount,
+        endDate,
+        admin: ADMIN_USER,
+        year: year,
+      },
+    };
+
     const bookSeatEmail = {
       from: "CafeOne <s.osinloye@sdsd.com>",
       sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
       to: email,
       subject: "Seat Reservation",
-      template: "seat", // the name of the template file i.e email.handlebars
+      template: "seat",
+      attachments: [
+        {
+          filename: "Cafeone.png",
+          path: path.join(__dirname, "../views/Cafeone.png"),
+          cid: "Cafeone",
+        },
+      ],
       context: {
         name: `${fullName}`, // replace {{name}} with Adebola
         subject: "Seat Reservation",
@@ -73,6 +114,7 @@ exports.bookSeat = async (req, res) => {
     };
 
     mailService.sendMail(bookSeatEmail);
+    mailService.sendMail(bookSeatAdmin);
 
     res.status(201).json({
       message: `Seat reservation successful ${fullName}, an email has been sent to ${email}.`,
@@ -101,6 +143,38 @@ exports.bookSpace = async (req, res) => {
 
   try {
     const year = new Date().getFullYear();
+
+    const bookSpaceAdmin = {
+      from: "Cafe One <s.osinloye@sdsd.com>",
+      sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
+      to: `Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
+      bcc: "psalmueloye@gmail.com",
+      subject: "Space Reservation",
+      template: "space-admin",
+      attachments: [
+        {
+          filename: "Cafeone.png",
+          path: path.join(__dirname, "../views/Cafeone.png"),
+          cid: "Cafeone",
+        },
+      ],
+      context: {
+        name: `${fullName}`, // replace {{name}} with Adebola
+        subject: "Space Reservation",
+        email,
+        duration,
+        phone,
+        plan,
+        locationName: location_name,
+        paymentMethod: payment_method,
+        date,
+        startTime: start_time,
+        amount,
+        totalAmount,
+
+        year: year,
+      },
+    };
 
     const bookSpaceEmail = {
       from: "Cafe One <s.osinloye@sdsd.com>",
@@ -132,7 +206,7 @@ exports.bookSpace = async (req, res) => {
         year: year,
       },
     };
-
+    mailService.sendMail(bookSpaceAdmin);
     mailService.sendMail(bookSpaceEmail);
     res.status(201).json({
       message: `Space reservation successful ${fullName}, an email has been sent to ${email}.`,
