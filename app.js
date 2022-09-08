@@ -27,6 +27,7 @@ app.options("*", corsMiddleware);
 app.use(helmet());
 
 app.use(express.static("views"));
+
 app.use("/booking", booking);
 
 app.use((req, res) => {

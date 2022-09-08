@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { check } = require("express-validator");
-const { bookSeat } = require("../controllers/bookingController");
+const { bookSeat, bookSpace } = require("../controllers/bookingController");
 
-router.post("/", [check("email").isEmail()], bookSeat);
+router.post("/seat", [check("email").isEmail()], bookSeat);
+router.post("/space", [check("email").isEmail()], bookSpace);
 
 module.exports = router;
