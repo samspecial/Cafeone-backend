@@ -73,18 +73,10 @@ exports.makeOrder = async (req, res) => {
 
     const cafeOrderEmail = {
       from: "CafeOne <s.osinloye@sdsd.com>",
-      sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
-      bcc: `Jerry Ogungbaro <jerryogungbaro@gmail.com>, psalmueloye@gmail.com`,
+      bcc: `psalmueloye@gmail.com`,
       to: email,
       subject: "Cafe One Order",
       template: "cafe",
-      attachments: [
-        {
-          filename: "Cafeone.png",
-          path: path.join(__dirname, "../views/Cafeone.png"),
-          cid: "Cafeone",
-        },
-      ],
       context: {
         name: `${fullName}`, // replace {{name}} with Adebola
         subject: "Cafe One Order",

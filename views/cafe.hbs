@@ -8,15 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="x-apple-disable-message-reformatting" />
     <title>CafeOne</title>
-    <!--[if mso]>
-	<noscript>
-		<xml>
-			<o:OfficeDocumentSettings>
-				<o:PixelsPerInch>96</o:PixelsPerInch>
-			</o:OfficeDocumentSettings>
-		</xml>
-	</noscript>
-	<![endif]-->
+
     <style>
       table, td, div, h1, p {font-family: Arial, sans-serif;}
     </style>
@@ -33,15 +25,12 @@
             style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;"
           >
             <tr>
-              <td
-                align="center"
-                style="padding:40px 0 30px 0;background:#70bbd9;"
-              >
+              <td align="center">
                 <img
-                  src="https://assets.codepen.io/210284/h1.png"
+                  src="https://res.cloudinary.com/samspecial/image/upload/v1662724403/restaurant.png"
                   alt=""
-                  width="300"
-                  style="height:auto;display:block;"
+                  width="100%"
+                  style="height:auto;display:block;width:100%;"
                 />
               </td>
             </tr>
@@ -90,8 +79,31 @@
                       </p>
 
                     </td>
-                  </tr>
 
+                  </tr>
+                  <tr><td><table>
+                        <thead>
+
+                          <th>S/N</th>
+                          <th>Name</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Total price</th>
+                        </thead>
+                        {{#each cartItems}}
+                          <tbody>
+                            <tr>
+
+                              <td>{{@index}}</td>
+                              <td>{{name}}</td>
+                              <td>&#8358;{{price}}</td>
+                              <td>{{this.quantity}}</td>
+                              <td>&#8358;{{totalPrice}}</td>
+                            </tr>
+                          </tbody>
+                        {{/each}}
+
+                      </table></td></tr>
                 </table>
               </td>
             </tr>
