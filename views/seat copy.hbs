@@ -32,19 +32,18 @@
             role="presentation"
             style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;"
           >
+
             <tr>
-              <td
-                align="center"
-                style="padding:40px 0 30px 0;background:#70bbd9;"
-              >
+              <td align="center">
                 <img
-                  src="https://assets.codepen.io/210284/h1.png"
-                  alt=""
-                  width="300"
-                  style="height:auto;display:block;"
+                  src="cid:Cafeone"
+                  alt="cafe-one"
+                  width="100%"
+                  style="height:auto;display:block;width:100%;"
                 />
               </td>
             </tr>
+
             <tr>
               <td style="padding:36px 30px 42px 30px;">
                 <table
@@ -55,37 +54,43 @@
                     <td style="padding:0 0 36px 0;color:#153643;">
 
                       <h2>Hello {{name}} </h2>
-                      <p>Please be informed that your order was successful.
-                        Kindly find the details below for onward processing.
+                      <p>Please be informed that your seat reservation was
+                        successful. Kindly find the details below for onward
+                        processing.
                         <br />
+                        <hr />
                         Customer name:
                         {{name}}
-                        <br />
+                        <hr />
                         Phone number:
                         {{phone}}
-                        <br />
+                        <hr />
                         Email Address:
                         {{email}}
-                        <br />
-
+                        <hr />
+                        Plan name:
+                        {{plan_name}}
+                        <hr />
                         Location:
                         {{location_name}}
-                        <br />
+                        <hr />
                         Payment method:
                         {{payment_method}}
-
-                        <br />
-
-                        Items:
-                        {{cartItems}}
-                        <br />
-
-                        Quantity:
-                        {{totalQuantity}}
-                        <br />
-
+                        <hr />
+                        Duration:
+                        {{duration}}
+                        <hr />
+                        Number of seat:
+                        {{num_of_seat}}
+                        <hr />
                         Amount: &#8358;{{totalAmount}}
-                        <br />
+                        <hr />
+                        Start date:
+                        {{start_date}}
+                        <hr />
+                        End date:
+                        {{endDate}}
+                        <hr />
 
                       </p>
 

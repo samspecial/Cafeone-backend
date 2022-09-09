@@ -6,6 +6,7 @@ require("dotenv").config();
 
 const corsMiddleware = require("./utils/cors");
 const booking = require("./routes/booking");
+const cafe = require("./routes/cafe");
 
 // //Sets our app to use the handlebars engine
 // app.set("view engine", "handlebars");
@@ -29,6 +30,7 @@ app.use(helmet());
 app.use(express.static("views"));
 
 app.use("/booking", booking);
+app.use("/order", cafe);
 
 app.use((req, res) => {
   res.end("Cafe One");
