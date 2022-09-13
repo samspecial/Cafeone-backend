@@ -30,57 +30,18 @@ exports.makeOrder = async (req, res) => {
 
     const year = new Date().getFullYear();
 
-    // const contactMailOptions = {
-    //   from: ADMIN_EMAIL,
-    //   to: email,
-    //   subject: subject,
-    //   template: "enquiry", // the name of the template file i.e email.handlebars
-    //   context: {
-    //     name: `${firstname} ${lastname}`, // replace {{name}} with Adebola
-
-    //     year: year,
-    //   },
-    // };
-
-    // const makeCafeAdmin = {
-    //   from: "CafeOne <s.osinloye@sdsd.com>",
-    //   sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
-    //   to: `Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
-    //   bcc: "psalmueloye@gmail.com",
-    //   subject: "Seat Reservation",
-    //   template: "seat-admin",
-    //   attachments: [
-    //     {
-    //       filename: "Cafeone.png",
-    //       path: path.join(__dirname, "../views/Cafeone.png"),
-    //       cid: "Cafeone",
-    //     },
-    //   ],
-    //   context: {
-    //     name: `${fullName}`, // replace {{name}} with Adebola
-    //     subject: "Cafe One Order",
-    //     email,
-    //     duration,
-    //     phone,
-    //     cartItems,
-    //     location_name,
-    //     payment_method,
-    //     totalQuantity,
-    //     totalAmount,
-    //     year: year,
-    //   },
-    // };
-
-    const cafeOrderEmail = {
+    const cafeAdminEmail = {
       from: "CafeOne <s.osinloye@sdsd.com>",
-      bcc: `psalmueloye@gmail.com`,
-      to: email,
-      subject: "Cafe One Order",
-      template: "cafe",
+      sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
+      to: `CafeOne Co-working <CafeOne.Co-working@sterling.ng>, Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
+      bcc: "psalmueloye@gmail.com",
+      subject: "CafeOne Order",
+      template: "cafe-admin",
       context: {
         name: `${fullName}`, // replace {{name}} with Adebola
         subject: "Cafe One Order",
         email,
+        duration,
         phone,
         cartItems,
         location_name,
@@ -91,7 +52,26 @@ exports.makeOrder = async (req, res) => {
       },
     };
 
-    //mailService.sendMail(bookSeatEmail);
+    const cafeOrderEmail = {
+      from: "CafeOne <s.osinloye@sdsd.com>",
+      to: email,
+      subject: "CafeOne Order",
+      template: "cafe",
+      context: {
+        name: `${fullName}`,
+        subject: "CafeOne Order",
+        email,
+        phone,
+        cartItems,
+        location_name,
+        payment_method,
+        totalQuantity,
+        totalAmount,
+        year: year,
+      },
+    };
+    //res.cloudinary.com/samspecial/image/upload/v1662654400/Cafeone.png
+    mailService.sendMail(cafeAdminEmail);
     mailService.sendMail(cafeOrderEmail);
 
     res.status(201).json({

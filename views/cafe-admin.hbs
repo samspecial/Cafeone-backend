@@ -7,16 +7,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="x-apple-disable-message-reformatting" />
-    <title>CafeOne</title>
-    <!--[if mso]>
-	<noscript>
-		<xml>
-			<o:OfficeDocumentSettings>
-				<o:PixelsPerInch>96</o:PixelsPerInch>
-			</o:OfficeDocumentSettings>
-		</xml>
-	</noscript>
-	<![endif]-->
+    <title>CafeOne Co-working</title>
+
     <style>
       table, td, div, h1, p {font-family: Arial, sans-serif;}
     </style>
@@ -32,18 +24,16 @@
             role="presentation"
             style="width:602px;border-collapse:collapse;border:1px solid #cccccc;border-spacing:0;text-align:left;"
           >
-
             <tr>
               <td align="center">
                 <img
-                  src="cid:Cafeone"
-                  alt="cafe-one"
+                  src="https://res.cloudinary.com/samspecial/image/upload/v1662724403/restaurant.png"
+                  alt=""
                   width="100%"
                   style="height:auto;display:block;width:100%;"
                 />
               </td>
             </tr>
-
             <tr>
               <td style="padding:36px 30px 42px 30px;">
                 <table
@@ -53,9 +43,12 @@
                   <tr>
                     <td style="padding:0 0 36px 0;color:#153643;">
 
-                      <h2>Hello {{name}} </h2>
-                      <p>Please be informed that your seat reservation was
-                        successful. Kindly find the details below for onward
+                      <h2>Hello Admin, </h2>
+                      <p>Please be informed that
+                        {{name}}
+                        has successfully made an order from
+                        {{location_name}}
+                        outlet. Kindly find the details below for onward
                         processing.
                         <br />
                         <hr />
@@ -68,35 +61,41 @@
                         Email Address:
                         {{email}}
                         <hr />
-                        Plan name:
-                        {{plan_name}}
-                        <hr />
-                        Location:
-                        {{location_name}}
-                        <hr />
+
                         Payment method:
                         {{payment_method}}
-                        <hr />
-                        Duration:
-                        {{duration}}
-                        <hr />
-                        Number of seat:
-                        {{num_of_seat}}
-                        <hr />
-                        Amount: &#8358;{{totalAmount}}
-                        <hr />
-                        Start date:
-                        {{start_date}}
-                        <hr />
-                        End date:
-                        {{endDate}}
+
                         <hr />
 
+                        Quantity:
+                        {{totalQuantity}}
+
+                        <hr />
+                        <br />
                       </p>
 
                     </td>
-                  </tr>
 
+                  </tr>
+                  <tr><td><table>
+                        <thead>
+                          <th>Name</th>
+                          <th>Price</th>
+                          <th>Quantity</th>
+                          <th>Total price</th>
+                        </thead>
+                        {{#each cartItems}}
+                          <tbody>
+                            <tr>
+                              <td>{{name}}</td>
+                              <td>&#8358;{{price}}</td>
+                              <td>{{quantity}}</td>
+                              <td>&#8358;{{totalPrice}}</td>
+                            </tr>
+                          </tbody>
+                        {{/each}}
+
+                      </table></td></tr>
                 </table>
               </td>
             </tr>
