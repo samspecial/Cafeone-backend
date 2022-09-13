@@ -38,7 +38,7 @@ exports.makeOrder = async (req, res) => {
       subject: "CafeOne Order",
       template: "cafe-admin",
       context: {
-        name: `${fullName}`, // replace {{name}} with Adebola
+        name: `${fullName}`,
         subject: "Cafe One Order",
         email,
         duration,
@@ -70,7 +70,7 @@ exports.makeOrder = async (req, res) => {
         year: year,
       },
     };
-    //res.cloudinary.com/samspecial/image/upload/v1662654400/Cafeone.png
+
     mailService.sendMail(cafeAdminEmail);
     mailService.sendMail(cafeOrderEmail);
 

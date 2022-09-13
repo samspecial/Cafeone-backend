@@ -27,8 +27,8 @@
             <tr>
               <td align="center">
                 <img
-                  src="cid:Cafeone"
-                  alt="cafe-one"
+                  src="https://res.cloudinary.com/samspecial/image/upload/v1662654400/Cafeone.png"
+                  alt=""
                   width="100%"
                   style="height:auto;display:block;width:100%;"
                 />
@@ -46,8 +46,10 @@
                       <h2>Hello Admin, </h2>
                       <p>Please be informed that
                         {{name}}
-                        has made a space reservation. Kindly find the details
-                        below for onward processing.
+                        has successfully reserved a space at
+                        {{locationName}}
+                        place. Kindly find the details below for onward
+                        processing.
                         <br />
                         <br />
                         Customer name:
@@ -73,13 +75,12 @@
                         hours
                         <hr />
 
-                        Amount:
-                        {{totalAmount}}
+                        Amount: &#8358;{{totalAmount}}
                         <hr />
                         Payment method:
                         {{paymentMethod}}
                         <hr />
-
+                        <br />
                       </p>
 
                     </td>

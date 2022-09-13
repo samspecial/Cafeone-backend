@@ -4,8 +4,6 @@ const mailService = new MailService();
 
 const { validationResult } = require("express-validator");
 
-const { ADMIN_EMAIL, ADMIN_USER } = process.env;
-
 // Create email generator
 
 exports.bookSeat = async (req, res) => {
@@ -34,34 +32,15 @@ exports.bookSeat = async (req, res) => {
 
     const year = new Date().getFullYear();
 
-    // const contactMailOptions = {
-    //   from: ADMIN_EMAIL,
-    //   to: email,
-    //   subject: subject,
-    //   template: "enquiry", // the name of the template file i.e email.handlebars
-    //   context: {
-    //     name: `${firstname} ${lastname}`, // replace {{name}} with Adebola
-
-    //     year: year,
-    //   },
-    // };
-
     const bookSeatAdmin = {
       from: "CafeOne <s.osinloye@sdsd.com>",
       sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
-      to: `Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
+      to: `CafeOne Co-working <CafeOne.Co-working@sterling.ng>, Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
       bcc: "psalmueloye@gmail.com",
       subject: "Seat Reservation",
       template: "seat-admin",
-      attachments: [
-        {
-          filename: "Cafeone.png",
-          path: path.join(__dirname, "../views/Cafeone.png"),
-          cid: "Cafeone",
-        },
-      ],
       context: {
-        name: `${fullName}`, // replace {{name}} with Adebola
+        name: `${fullName}`,
         subject: "Seat Reservation",
         email,
         duration,
@@ -75,7 +54,6 @@ exports.bookSeat = async (req, res) => {
         amount,
         totalAmount,
         endDate,
-        admin: ADMIN_USER,
         year: year,
       },
     };
@@ -83,18 +61,11 @@ exports.bookSeat = async (req, res) => {
     const bookSeatEmail = {
       from: "CafeOne <s.osinloye@sdsd.com>",
       sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
-      to: email,
+      to: `${fullName} ${email}`,
       subject: "Seat Reservation",
       template: "seat",
-      attachments: [
-        {
-          filename: "Cafeone.png",
-          path: path.join(__dirname, "../views/Cafeone.png"),
-          cid: "Cafeone",
-        },
-      ],
       context: {
-        name: `${fullName}`, // replace {{name}} with Adebola
+        name: `${fullName}`,
         subject: "Seat Reservation",
         email,
         duration,
@@ -108,7 +79,6 @@ exports.bookSeat = async (req, res) => {
         amount,
         totalAmount,
         endDate,
-        admin: ADMIN_USER,
         year: year,
       },
     };
@@ -147,19 +117,13 @@ exports.bookSpace = async (req, res) => {
     const bookSpaceAdmin = {
       from: "Cafe One <s.osinloye@sdsd.com>",
       sender: "s.osinloye@sdsd.com <s.osinloye@sdsd.com>",
-      to: `Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
+      to: `CafeOne Co-working <CafeOne.Co-working@sterling.ng>, Jerry Ogungbaro <jerryogungbaro@gmail.com>`,
       bcc: "psalmueloye@gmail.com",
       subject: "Space Reservation",
       template: "space-admin",
-      attachments: [
-        {
-          filename: "Cafeone.png",
-          path: path.join(__dirname, "../views/Cafeone.png"),
-          cid: "Cafeone",
-        },
-      ],
+
       context: {
-        name: `${fullName}`, // replace {{name}} with Adebola
+        name: `${fullName}`,
         subject: "Space Reservation",
         email,
         duration,
@@ -182,13 +146,6 @@ exports.bookSpace = async (req, res) => {
       to: `${fullName} <${email}>`,
       subject: "Space Reservation",
       template: "space",
-      attachments: [
-        {
-          filename: "Cafeone.png",
-          path: path.join(__dirname, "../views/Cafeone.png"),
-          cid: "Cafeone",
-        },
-      ],
       context: {
         name: `${fullName}`, // replace {{name}} with Adebola
         subject: "Space Reservation",
