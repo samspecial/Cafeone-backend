@@ -41,7 +41,6 @@ exports.makeOrder = async (req, res) => {
         name: `${fullName}`,
         subject: "Cafe One Order",
         email,
-        duration,
         phone,
         cartItems,
         location_name,
