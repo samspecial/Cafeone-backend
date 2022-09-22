@@ -1,13 +1,13 @@
-# hng-resume-backend
-
 ## Getting started guide
 
 ###
 
-Welcome to my Resume server written in NodeJS, an HNG8 task..
+Welcome to my Cafeone Email written in NodeJS
 
-The Resume frontend was built with HTML, CSS and JS ([frontend repo](https://github.com/samspecial/hng-resume)) and deployed using github pages [here](https://samspecial.github.io/hng-resume)..
+The Cafeone WebApp frontend was built with ReactJS, CSS and JS ([frontend repo](https://cafeone1.netlify.app/)) and deployed using Microsoft Azure [here](https://samspecial)..
 
-The program to print my name was done through setting up a basic NodeJS server which was hosted [here](https://printfullname.herokuapp.com/)
+This web app help professionals and users of Cafeone restaurant to conveniently book a seat, space and buy items within the restaurant using online payment options (Sterling POS, Non Sterling POS and Flutterwave)
 
-The Resume backend was built using NodeJS and Express. Here is the deployed [link](https://samspecial-resume.herokuapp.com/).
+This Cafeone Email server was built using NodeJS Express and deployed on AWS Elastic BeanStalk. Here is the deployed [link](https://samspecial-resume).
+
+# Cafeone-backend
